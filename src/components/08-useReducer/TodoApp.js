@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import './styles.css';
 
 export const TodoApp = () => {
+
+    const [state, dispatch] = useReducer(reducer, initialState, init)
+
     return (
         <div>
             <h1>TodoApp</h1>
