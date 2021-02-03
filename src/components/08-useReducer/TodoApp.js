@@ -1,9 +1,13 @@
 import React, { useReducer } from 'react';
 import './styles.css';
 
+const initialState = [{
+    id: new Date().getTime()
+}]
+
 export const TodoApp = () => {
 
-    const [state, dispatch] = useReducer(reducer, initialState, init)
+    const [ state ] = useReducer(reducer, initialState)
 
     return (
         <div>
@@ -11,11 +15,11 @@ export const TodoApp = () => {
             <hr/>
 
             <ul>
-                <li>Tarea1</li>
-                <li>Tarea2</li>
-                <li>Tarea3</li>
+                <li>Task1</li>
+                <li>Task2</li>
+                <li>Task3</li>
+                <li>Task4</li>
             </ul>
 
         </div>
     )
-}
