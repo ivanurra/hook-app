@@ -1,13 +1,16 @@
 import React, { useReducer } from 'react';
+import { todoReducer } from './todoReducer';
 import './styles.css';
 
 const initialState = [{
-    id: new Date().getTime()
+    id: new Date().getTime(),
+    desc: 'Learn React',
+    done: false
 }]
 
 export const TodoApp = () => {
 
-    const [ state ] = useReducer(reducer, initialState)
+    const [ state ] = useReducer(todoReducer, initialState)
 
     return (
         <div>
@@ -18,8 +21,8 @@ export const TodoApp = () => {
                 <li>Task1</li>
                 <li>Task2</li>
                 <li>Task3</li>
-                <li>Task4</li>
             </ul>
 
         </div>
     )
+}
