@@ -14,6 +14,21 @@ export const TodoApp = () => {
 
     console.log( todos );
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const newTodo = {
+            id: new Date().getTime(),
+            desc: 'New task',
+            done: false
+        }
+
+        const action = {
+            type: 'add',
+            payload: newTodo
+        }
+    }
+
     return (
         <div>
             <h1>TodoApp ({ todos.length })</h1>
@@ -45,7 +60,7 @@ export const TodoApp = () => {
                     <h4>Add task</h4>
                     <hr />
                     
-                    <form>
+                    <form onSubmit={ handleSubmit }>
                         <input
                             type="text"
                             name="description"
@@ -55,6 +70,7 @@ export const TodoApp = () => {
                         />
 
                         <button
+                            type="submit"
                             className="btn btn-success mt-1 btn-block"
                         >
                         Add Task
